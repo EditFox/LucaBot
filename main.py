@@ -33,6 +33,7 @@ async def on_message(message):
                 
 @lucario.base.lucafunc
 async def reboot(message, client):
+    '''Owner command to reboot bot'''
     if message.author.id == config["owner_id"]:
         await client.close()
 
