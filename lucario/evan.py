@@ -33,7 +33,7 @@ async def commands(message, client):
 async def debug(message, client):
     '''Debug command for owner'''
     if message.author.id != config["owner_id"]:
-        await client.send_message("Can't let you do that, sorry!")
+        await client.send_message(message.channel, "Can't let you do that, sorry!")
         return
     cmd = message.content[7:]
     try:

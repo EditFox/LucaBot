@@ -4,6 +4,7 @@ import lucario
 import asyncio
 import json
 import subprocess
+import importlib as imp
 import sys #to catch errors in debug!
 client = discord.Client(max_messages=100)
 
@@ -37,7 +38,6 @@ async def reboot(message, client):
     '''Owner command to reboot bot'''
     if message.author.id == config["owner_id"]:
         subprocess.Popen(["python.exe ", __file__])
-        await bot.logout()
-
+        await client.close()
 
 client.run(config['token'])
